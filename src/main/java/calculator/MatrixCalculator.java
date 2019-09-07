@@ -4,8 +4,6 @@ import model.Complex;
 import model.ComplexMatrix;
 import model.ComplexVector;
 
-import java.awt.geom.Arc2D;
-
 public class MatrixCalculator {
 
     public static ComplexMatrix matrixSum(ComplexMatrix m1, ComplexMatrix m2) {
@@ -104,6 +102,7 @@ public class MatrixCalculator {
     }
 
     public static Complex innerProduct(ComplexMatrix m1, ComplexMatrix m2) {
+        //noinspection ConstantConditions
         return trace(matrixMultiplication(adjointMatrix(m1), m2));
     }
 
@@ -139,26 +138,19 @@ public class MatrixCalculator {
         return true;
     }
 
+    @SuppressWarnings("ConstantConditions")
     public static boolean isUnitary(ComplexMatrix m1){
         if (m1.isSquare()) {
-            for (int n = 0; n < m1.getN(); n++) {
-                for (int m = 0; m < m1.getM(); m++) {
-                    Complex sum = new Complex(0, 0);
-                    for (int k = 0; k < m1.getM(); k++) {
-//                        System.out.println(Functions.CProduct(m1.getElement(n, k), m1.getElement(k, n)));
-                        sum = Functions.CSum(sum, Functions.CProduct(m1.getElement(n, k), m1.getElement(m, k)));
+            ComplexMatrix mAdj = adjointMatrix(m1);
+            ComplexMatrix mAns = matrixMultiplication(mAdj,m1);
+            for (int i = 0; i < m1.getN(); i++) {
+                for (int j = 0; j < m1.getM(); j++) {
+                    if (i==j){
+                        if (!new Complex(1,0).equals(mAns.getElement(i,j))) return false;
                     }
-                    if (sum.getpImg() == 0){
-                        if (n == m) {
-                            if (sum.getpReal()!=1){
-                                return false;
-                            }
-                        }
-                        else if (sum.getpReal()!=0) {
-                            return false;
-                        }
+                    else{
+                        if (!new Complex(0,0).equals(mAns.getElement(i,j))) return false;
                     }
-                    else return false;
                 }
             }
             return true;
@@ -166,6 +158,20 @@ public class MatrixCalculator {
             System.out.println("La matriz debe ser cuadrada");
             return false;
         }
+    }
+
+    public static ComplexMatrix tensorProduct(ComplexMatrix m1, ComplexMatrix m2){
+        ComplexMatrix mAns = new ComplexMatrix(m1.getN()*m2.getN(), m1.getM()*m2.getM());
+        int m = m1.getN();
+        int n = m2.getN();
+        for (int j = 0; j < mAns.getN(); j++) {
+            for (int k = 0; k < mAns.getM(); k++) {
+                Complex c1 = m1.getElement(j/n, k/m);
+                Complex c2 = m2.getElement(j%n,k%m);
+                mAns.addToMatrix(j, k, Functions.CProduct(c1,c2));
+            }
+        }
+        return mAns;
     }
 
 }

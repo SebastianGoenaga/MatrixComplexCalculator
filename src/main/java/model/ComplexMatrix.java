@@ -1,11 +1,39 @@
 package model;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class ComplexMatrix {
 	
 	private Complex[][] matrix;
 	private int n, m;
 
-	public int getN() {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ComplexMatrix that = (ComplexMatrix) o;
+        return equalsMatrix(matrix, that.matrix);
+    }
+    
+    private boolean equalsMatrix(Complex[][] m1, Complex[][] m2){
+		if (m1.length == m2.length && m1[0].length == m2[0].length) {
+			for (int i = 0; i < n; i++) {
+				if (!Arrays.equals(m1[i], m2[i])) return false;
+			}
+			return true;
+		}else return false;
+
+	}
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(n, m);
+        result = 31 * result + Arrays.hashCode(matrix);
+        return result;
+    }
+
+    public int getN() {
 		return n;
 	}
 
@@ -28,20 +56,19 @@ public class ComplexMatrix {
 	}
 
 	public boolean isSquare (){
-		if (n == m) return true;
-		else return false;
+		return n == m;
 	}
 	
 	@Override
 	public String toString() {
-		String matrix = "";
+		StringBuilder matrix = new StringBuilder();
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < m; j++) {
-				matrix += "  "+this.matrix[i][j]; 
+				matrix.append("  ").append(this.matrix[i][j]);
 			}
-			matrix += "\n";
+			matrix.append("\n");
 		}
-		return matrix;
+		return matrix.toString();
 	}
 
 }

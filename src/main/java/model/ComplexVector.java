@@ -10,4 +10,5 @@ public class ComplexVector extends ComplexMatrix {
         super.addToMatrix(n, 0, c);
     }
 
+
 }
