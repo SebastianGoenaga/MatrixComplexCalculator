@@ -406,8 +406,6 @@ class MatrixCalculatorTest {
 
         Complex c5 = new Complex((double)1/2,0);
 
-        System.out.println(2/4);
-
         m1.addToMatrix(0, 0, c1);
         m1.addToMatrix(0, 1, c2);
         m1.addToMatrix(1, 0, c3);
