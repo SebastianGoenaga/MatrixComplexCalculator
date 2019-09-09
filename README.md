@@ -58,7 +58,7 @@ git clone https://github.com/SebastianGoenaga/MatrixComplexCalculator
 2. A continución ya debería ser capaz de usar la librería completa como se muestra en la siguiente imagen de ejemplo.
 ![prueba](img/prueba.png)
 
-3. Recuerde acceder a la librería de forma estatica.    
+3. Recuerde acceder a la librería de forma estática.  
 
 ### Ingresar casos de prueba
 El siguiente archivo es el que tendrá que modificar si quiere probar otros casos.
