@@ -61,7 +61,7 @@ git clone https://github.com/SebastianGoenaga/MatrixComplexCalculator
 3. Recuerde acceder a la librería de forma estática.
 
 4. A continuación tiene un ejemplo (multiplicación) de cómo crear los números complejos y la matriz.
-~~~
+~~~ java
 	ComplexMatrix m1 = new ComplexMatrix(2, 2);
         ComplexMatrix m2 = new ComplexMatrix(2, 2);
 
