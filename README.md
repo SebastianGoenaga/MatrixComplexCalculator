@@ -38,7 +38,7 @@ git clone https://github.com/SebastianGoenaga/MatrixComplexCalculator
 ### Cómo usar la libreria
 1. Copie las siguientes etiquetas en su archivo pom.xml:
 
-~~~
+~~~ markdown
 <repositories>
     <repository>
         <id>jitpack.io</id>
