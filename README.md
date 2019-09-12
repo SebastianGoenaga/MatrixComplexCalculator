@@ -58,7 +58,35 @@ git clone https://github.com/SebastianGoenaga/MatrixComplexCalculator
 2. A continución ya debería ser capaz de usar la librería completa como se muestra en la siguiente imagen de ejemplo.
 ![prueba](img/prueba.png)
 
-3. Recuerde acceder a la librería de forma estática.  
+3. Recuerde acceder a la librería de forma estática.
+
+4. A continuación tiene un ejemplo (multiplicación) de cómo crear los números complejos y la matriz.
+~~~
+	ComplexMatrix m1 = new ComplexMatrix(2, 2);
+        ComplexMatrix m2 = new ComplexMatrix(2, 2);
+
+        Complex c1 = new Complex(3, 4);
+        Complex c2 = new Complex(4, 2);
+        Complex c3 = new Complex(7, 1);
+        Complex c4 = new Complex(-1, 6);
+	
+        Complex c5 = new Complex(5, -1);
+        Complex c6 = new Complex(2, 3);
+        Complex c7 = new Complex(-3, 4);
+        Complex c8 = new Complex(8, -5);
+
+        m1.addToMatrix(0, 0, c1);
+        m1.addToMatrix(0, 1, c2);
+        m1.addToMatrix(1, 0, c3);
+        m1.addToMatrix(1, 1, c4);
+
+        m2.addToMatrix(0, 0, c5);
+        m2.addToMatrix(0, 1, c6);
+        m2.addToMatrix(1, 0, c7);
+        m2.addToMatrix(1, 1, c8);
+
+        ComplexMatrix result = MatrixCalculator.matrixMultiplication(m1, m2);
+~~~
 
 ### Ingresar casos de prueba
 El siguiente archivo es el que tendrá que modificar si quiere probar otros casos.
