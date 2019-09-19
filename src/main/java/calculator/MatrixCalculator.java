@@ -92,9 +92,9 @@ public class MatrixCalculator {
         }
     }
 
-    public static ComplexMatrix actionOverVector(ComplexMatrix m1, ComplexVector v1) {
+    public static ComplexVector actionOverVector(ComplexMatrix m1, ComplexVector v1) {
         if (m1.getN() == m1.getM())
-            return matrixMultiplication(m1, v1);
+            return new ComplexVector(matrixMultiplication(m1, v1));
         else {
             System.out.println("La matriz debe ser cuadrada");
             return null;

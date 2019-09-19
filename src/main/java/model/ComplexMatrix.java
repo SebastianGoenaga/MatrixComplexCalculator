@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class ComplexMatrix {
 	
-	private Complex[][] matrix;
+	Complex[][] matrix;
 	private int n, m;
 
     @Override
