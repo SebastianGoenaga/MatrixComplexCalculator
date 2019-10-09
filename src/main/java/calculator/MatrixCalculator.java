@@ -112,7 +112,7 @@ public class MatrixCalculator {
 
     public static Complex innerProduct(ComplexVector v1, ComplexVector v2) {
         //noinspection ConstantConditions
-        return innerProduct(adjointMatrix((ComplexMatrix) v1),(ComplexMatrix) v2);
+        return innerProduct((ComplexMatrix) v1,(ComplexMatrix) v2);
     }
 
     public static Complex trace(ComplexMatrix m1) {
