@@ -123,6 +123,10 @@ public class MatrixCalculator {
         return Math.sqrt(innerProduct(m1, m1).getpReal());
     }
 
+    public static double norm(ComplexVector v1) {
+        return norm(v1);
+    }
+
     public static double distance(ComplexMatrix m1, ComplexMatrix m2) {
         return norm(matrixSubtraction(m1, m2));
     }

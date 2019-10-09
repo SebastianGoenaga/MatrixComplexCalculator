@@ -43,6 +43,11 @@
             <artifactId>ComplexCalculator</artifactId>
             <version>3c8348b5</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.SebastianGoenaga</groupId>
+            <artifactId>ExperimentSimulator</artifactId>
+            <version>afeca25426</version>
+        </dependency>
         <!-- ... -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
