@@ -74,7 +74,7 @@ public class MatrixCalculator {
     }
 
     public static ComplexVector adjointMatrix(ComplexVector v1) {
-        return new ComplexVector(adjointMatrix(v1));
+        return new ComplexVector(adjointMatrix((ComplexMatrix) v1));
     }
 
     public static ComplexMatrix matrixMultiplication(ComplexMatrix m1, ComplexMatrix m2) {
