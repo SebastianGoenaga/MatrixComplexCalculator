@@ -106,11 +106,6 @@ public class MatrixCalculator {
         return trace(matrixMultiplication(adjointMatrix(m1), m2));
     }
 
-    public static Complex innerProduct(ComplexVector v1, ComplexVector v2) {
-        //noinspection ConstantConditions
-        return innerProduct((ComplexMatrix) v1,(ComplexMatrix) v2);
-    }
-
     public static Complex trace(ComplexMatrix m1) {
         if (m1.isSquare()) {
             Complex sum = new Complex(0, 0);
