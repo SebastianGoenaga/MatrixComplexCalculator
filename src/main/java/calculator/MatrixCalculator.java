@@ -73,6 +73,10 @@ public class MatrixCalculator {
         return m3;
     }
 
+    public static ComplexVector adjointMatrix(ComplexVector v1) {
+        return new ComplexVector(adjointMatrix(v1));
+    }
+
     public static ComplexMatrix matrixMultiplication(ComplexMatrix m1, ComplexMatrix m2) {
         if (m1.getM() == m2.getN()) {
             ComplexMatrix m3 = new ComplexMatrix(m1.getN(), m2.getM());
