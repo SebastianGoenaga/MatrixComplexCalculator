@@ -124,7 +124,7 @@ public class MatrixCalculator {
     }
 
     public static double norm(ComplexVector v1) {
-        return norm(v1);
+        return norm((ComplexMatrix) v1);
     }
 
     public static double distance(ComplexMatrix m1, ComplexMatrix m2) {
